@@ -7,5 +7,12 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-list no-lines>
+    <button ion-item *ngFor="let user of users" (click)="onChatCreate(user)">
+
+      {{user.name}}
+
+    </button>
+  </ion-list>
  <button ion-button block (click)="onSignUp()" >Sign Up</button>
 </ion-content>

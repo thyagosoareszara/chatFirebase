@@ -32,7 +32,7 @@ export class SignUpPage {
         });
   }
 
-  onSubmit(): void {
+  onSubmit() {
     this.UserService.create(this.signUpForm.value)
     .then(()=>{
       console.log('Usuário Cadastrado com sucesso')
