@@ -1,3 +1,4 @@
+import { UserService } from './../../providers/user/user.service';
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -16,6 +17,7 @@ export class SignUpPage {
               public FormBuilder: FormBuilder,
               public navCtrl: NavController,
               public navParams: NavParams,
+              public UserService: UserService,
 
     ) {
 
@@ -31,7 +33,10 @@ export class SignUpPage {
   }
 
   onSubmit(): void {
-    console.log('Form submit')
+    this.UserService.create(this.signUpForm.value)
+    .then(()=>{
+      console.log('Usuário Cadastrado com sucesso')
+    })
   }
 
 }

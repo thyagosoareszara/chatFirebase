@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from './../../Models/user.models';
 import { FirebaseApp } from "@angular/fire";
-import * as firebase from 'firebase/app';
+
 
 
 
@@ -21,7 +21,7 @@ export class UserService {
     ) {
     console.log('Hello UserProvider Provider');
   }
-  create(user: User, uuid: string) {
+  create(user: User) {
     return this.db.list(`/users`)
       .push(user);
   }

@@ -3,7 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-import { AngularFireModule, FirebaseAppConfig } from '@angular/fire';
+import { AngularFireModule, FirebaseAppConfig } from 'angularfire2';
 
 
 import { HomePage } from '../pages/home/home';
@@ -13,12 +13,12 @@ import { UserService } from '../providers/user/user.service';
 
 
 const firebaseAppConfig: FirebaseAppConfig = {
-    apiKey: "AIzaSyD8e9wKkGqSY4YkmBjEcmSZZQnPPU3TWkE",
-    authDomain: "curso-ionic-chat-cfb73.firebaseapp.com",
-    databaseURL: "https://curso-ionic-chat-cfb73.firebaseio.com",
-    projectId: "curso-ionic-chat-cfb73",
-    storageBucket: "curso-ionic-chat-cfb73.appspot.com",
-    messagingSenderId: "366254907495"
+  apiKey: "AIzaSyD8e9wKkGqSY4YkmBjEcmSZZQnPPU3TWkE",
+  authDomain: "curso-ionic-chat-cfb73.firebaseapp.com",
+  databaseURL: "https://curso-ionic-chat-cfb73.firebaseio.com",
+  storageBucket: "curso-ionic-chat-cfb73.appspot.com",
+  messagingSenderId: "366254907495",
+  appId: "1:366254907495:web:369cc9c92e5ebb3b"
 
 }
 @NgModule({
@@ -31,7 +31,7 @@ const firebaseAppConfig: FirebaseAppConfig = {
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    AngularFireModule.initializeApp(firebaseAppConfig)
+    AngularFireModule.initializeApp(firebaseAppConfig),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
