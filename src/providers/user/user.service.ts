@@ -12,33 +12,25 @@ import { FirebaseApp } from "angularfire2";
 @Injectable()
 export class UserService {
 
-  users: AngularFireList<User[]>;
-
+  users: AngularFireList<User>;
 
   constructor(
     public db: AngularFireDatabase,
     public http: HttpClient,
-    public firebaseApp: FirebaseApp,
+    public firebaseApp: FirebaseApp
+  ) {
+    this.users = this.db.list("/users");
+  }
+
+  getUserList() {
+    return this.users.valueChanges();
+  }
 
 
-    ) {
-
-      this.users = this.db.list("/users");
-    }
-
-    getuserList() {
-      this.db.database.ref("/users")
-      console.log(this.getuserList)
-
-    }
-
-
-  create(user: User){
+  create(user: User) {
     return this.db.list("/users")
-    .push(user)
-
-
+      .push(user)
   }
-  }
+}
 
 

@@ -8,7 +8,7 @@
 
 <ion-content padding>
   <ion-list no-lines>
-    <button ion-item *ngFor="let user of users" (click)="onChatCreate(user)">
+    <button ion-item *ngFor="let user of users | async" (click)="onChatCreate(user)">
 
       {{user.name}}
 
